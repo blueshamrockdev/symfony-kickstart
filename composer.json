@@ -1,5 +1,5 @@
 {
-    "name": "blueshamrock/symfony-rad",
+    "name": "blueshamrock/rad-edition",
     "type": "symfony-application",
     "license": "MIT",
     "type": "project",
@@ -16,17 +16,18 @@
     ],
     "require": {
         "php"                                  : ">=5.3.3",
-        "symfony/symfony"                      : "2.3.*",
-        "doctrine/orm"                         : ">=2.2.3,<2.4-dev",
-        "doctrine/doctrine-bundle"             : "1.2.*",
-        "twig/extensions"                      : "1.0.*",
-        "symfony/assetic-bundle"               : "2.3.*",
-        "symfony/swiftmailer-bundle"           : "2.3.*",
-        "symfony/monolog-bundle"               : "2.3.*",
-        "sensio/distribution-bundle"           : "2.3.*",
-        "sensio/framework-extra-bundle"        : "2.3.*",
-        "sensio/generator-bundle"              : "2.3.*",
-        "incenteev/composer-parameter-handler" : "~2.0"
+        "blueshamrock/bsd-rad"                 : "~1.0",
+        "symfony/symfony"                      : "~2.4",
+        "doctrine/orm"                         : "~2.2>=2.2.3",
+        "doctrine/doctrine-bundle"             : "~1.2",
+        "twig/extensions"                      : "~1.0",
+        "symfony/assetic-bundle"               : "~2.3",
+        "symfony/swiftmailer-bundle"           : "~2.3",
+        "symfony/monolog-bundle"               : "~2.4",
+        "sensio/distribution-bundle"           : "~2.3",
+        "sensio/framework-extra-bundle"        : "~2.3",
+        "sensio/generator-bundle"              : "~2.3",
+        "incenteev/composer-parameter-handler" : "~2.1@dev"
    },
     "scripts": {
         "post-install-cmd": [
@@ -47,15 +48,19 @@
     "config": {
         "bin-dir": "bin"
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "extra": {
         "symfony-app-dir": "app",
         "symfony-web-dir": "web",
-        "incenteev-parameters": {
-            "file": "app/config/parameters.yml",
-            "file": "app/config/databases.yml",
-            "keep-outdated": true,
-        },
+        "incenteev-parameters": [
+            {
+                "file": "app/config/parameters.yml"
+            },
+            {
+            "file": "app/config/databases.yml"
+            },
+            "keep-outdated": true
+        ],
         "branch-alias": {
             "dev-master": "2.3-dev"
         }

@@ -18,7 +18,7 @@
         "php"                                  : ">=5.3.3",
         "blueshamrock/bsd-rad"                 : "~1.0",
         "symfony/symfony"                      : "~2.4",
-        "doctrine/orm"                         : "~2.2>=2.2.3",
+        "doctrine/orm"                         : "~2.2,>=2.2.3",
         "doctrine/doctrine-bundle"             : "~1.2",
         "twig/extensions"                      : "~1.0",
         "symfony/assetic-bundle"               : "~2.3",
@@ -58,8 +58,7 @@
             },
             {
             "file": "app/config/databases.yml"
-            },
-            "keep-outdated": true
+            }
         ],
         "branch-alias": {
             "dev-master": "2.3-dev"

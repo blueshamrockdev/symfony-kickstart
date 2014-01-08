@@ -1,5 +1,5 @@
 {
-    "name": "blueshamrock/rad-edition",
+    "name": "blueshamrock/symfony-kickstart",
     "type": "symfony-application",
     "license": "MIT",
     "type": "project",
@@ -26,19 +26,18 @@
         "symfony/monolog-bundle"               : "~2.4",
         "sensio/distribution-bundle"           : "~2.3",
         "sensio/framework-extra-bundle"        : "~2.3",
-        "sensio/generator-bundle"              : "~2.3",
-        "incenteev/composer-parameter-handler" : "~2.1@dev"
+        "sensio/generator-bundle"              : "~2.3"
    },
     "scripts": {
         "post-install-cmd": [
-            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
+            "BlueShamrock\\Symfony\\Composer\\ScriptHandler::installEnvironmentFiles",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile"
         ],
         "post-update-cmd": [
-            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
+            "BlueShamrock\\Symfony\\Composer\\ScriptHandler::installEnvironmentFiles",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
@@ -52,16 +51,5 @@
     "extra": {
         "symfony-app-dir": "app",
         "symfony-web-dir": "web",
-        "incenteev-parameters": [
-            {
-                "file": "app/config/parameters.yml"
-            },
-            {
-            "file": "app/config/databases.yml"
-            }
-        ],
-        "branch-alias": {
-            "dev-master": "2.3-dev"
-        }
     }
 }
